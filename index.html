@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رسالة خاصة</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: all 0.4s ease;
+    }
+
+    .login-box {
+      text-align: center;
+      background: rgba(40, 0, 60, 0.4);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 25px #a200ff;
+      width: 90%;
+      max-width: 320px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      text-align: center;
+      background-color: #111;
+      color: #fff;
+      font-size: 16px;
+      box-shadow: 0 0 10px #7d00ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #7d00ff;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #a200ff;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #a200ff;
+      box-shadow: 0 0 25px #d400ff;
+    }
+
+    .message-box {
+      display: none;
+      text-align: center;
+      background: rgba(30, 0, 40, 0.6);
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px #a200ff;
+      width: 90%;
+      max-width: 380px;
+      line-height: 1.7;
+      font-size: 16px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box" id="loginBox">
+    <input type="password" id="codeInput" placeholder="أدخل الكود">
+    <button onclick="checkCode()">دخول</button>
+  </div>
+
+  <div class="message-box" id="messageBox">
+    ما كنت اريدك اخباركِ به هو فقط,انكي شخص رائع ولا مثيل له, احب كثيرا التواصل معكي, 
+    ولدي الكثير من الفضول تجاهكي, كما اشعر احيانا انك تفهمينني اكثر مما افهم نفسي, 
+    اتمنى ان تبقي دائما بخير وسعادة ❤ فأنا لا احب ان اراكي حزينة او مستاءة واريد ان تكوني دائما 
+    في اعلى وارقى المراتب وتتفوقي على الجميع, شكرا لكي😔<br><br>
+    <strong>ارسلي 001 ان تمكنتي من الوصول الى هنا وانا سأعلم انكي قرئتي الرسالة وسأرد عليكي بلايك 👍🏻</strong>
+  </div>
+
+  <script>
+    function checkCode() {
+      const code = document.getElementById('codeInput').value;
+      const loginBox = document.getElementById('loginBox');
+      const messageBox = document.getElementById('messageBox');
+
+      if (code === "ismail$") {
+        loginBox.style.display = "none";
+        messageBox.style.display = "block";
+      } else {
+        alert("الكود غير صحيح ⚠");
+      }
+    }
+  </script>
+</body>
+</html>
