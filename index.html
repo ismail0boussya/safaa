@@ -79,6 +79,7 @@
       line-height: 1.7;
       font-size: 16px;
       color: #fff;
+      width:2px
     }
   </style>
 </head>
@@ -105,10 +106,12 @@
       if (code === "ismail$") {
         loginBox.style.display = "none";
         messageBox.style.display = "block";
+        messageBox.style.width = "inherit";
       } else {
         alert("الكود غير صحيح ⚠");
       }
     }
   </script>
 </body>
+
 </html>
