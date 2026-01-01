@@ -12,10 +12,11 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Cairo', sans-serif;
+      transition: all 500ms;
     }
 
     body {
-      background-color: #000;
+      background-color: #f8deff;
       color: #fff;
       height: 100vh;
       display: flex;
@@ -25,16 +26,17 @@
       transition: all 0.4s ease;
     }
 
-    .login-box {
-      text-align: center;
+    .login-box, #welcom-box {
+      text-align: justify;
       background: rgba(40, 0, 60, 0.4);
-      padding: 25px;
+      padding: 25px 45px;
       border-radius: 15px;
-      box-shadow: 0 0 25px #a200ff;
+      box-shadow: 0 0 25px #E2C7CF;
       width: 90%;
-      max-width: 320px;
+      max-width: 380px;
+      display: none;
+      opacity: 0;
     }
-
     input {
       width: 100%;
       padding: 10px;
@@ -43,10 +45,10 @@
       border-radius: 8px;
       margin-bottom: 15px;
       text-align: center;
-      background-color: #111;
-      color: #fff;
+      background-color: #000000b9;
+      color: #ffffff;
       font-size: 16px;
-      box-shadow: 0 0 10px #7d00ff;
+      box-shadow: 0 0 10px #7b00ff42;
     }
 
     button {
@@ -58,46 +60,70 @@
       font-size: 16px;
       border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 0 15px #a200ff;
+      box-shadow: 0 0 15px #a200ff5f;
       transition: 0.3s;
     }
 
-    button:hover {
-      background-color: #a200ff;
-      box-shadow: 0 0 25px #d400ff;
+    button:hover,input:hover {
+      background-color: #64009e;
+      box-shadow: 0 0 25px #4700555a;
     }
-
+    input:hover{
+      background-color: #000000cd;
+    }
     .message-box {
       display: none;
       text-align: center;
       background: rgba(30, 0, 40, 0.6);
       padding: 30px 20px;
       border-radius: 15px;
-      box-shadow: 0 0 30px #a200ff;
-      width: 90%;
+      box-shadow: 0 0 30px #a200ff7e;
+      width: 80%;
       max-width: 380px;
-      line-height: 1.7;
       font-size: 16px;
       color: #fff;
-      width:2px
+      line-height: 2;
+      margin: 1rem;
+    }
+    #code {
+      display: none;
     }
   </style>
 </head>
 <body>
+    <button onclick="welcome.style.cssText='display:block';this.style.display='none';
+   setTimeout(() => {
+    welcome.style.opacity='1';
+   }, 10); ">انقري للبدأ</button>
+  <div id="welcom-box">
+   <h2 style="text-align: center;">اهلا صفاء! نورتي المكان</h2>
+   <br><p>فلندخل في صلب الموضوع، لا اعلم ما إن كنتِ حقا مازلتِ مهتمة بقراءة ذلك الملف،إن مازالتِ تودين حقا معرفة ما يوجد بداخله وإشباع فضولك، فتفضلي...</p>
+   <ul>
+     <br><li>طبعا ستكونين القارئة الاولى والأخيرة بلا شك، لا اعرف كيف استطعتي الوصول الى هذه المرتبة من الثقة.. على أي.. انقري على <a href="read_condition.pdf">تحميل الملف الاول</a>، ثم بعد قراءته ارجعي واضغطي التالي...</li>
+     <br><li>انا احب من يتبع التعليمات.. لذا لا تنقري على التالي حتى تنتهي من قراءته.. </li>
+   </ul>
+    <br><button onclick="nextStep()">التالي</button>
+  </div>
   <div class="login-box" id="loginBox">
-    <input type="password" id="codeInput" placeholder="أدخل الكود">
-    <button onclick="checkCode()">دخول</button>
+    <h3 style="text-align: center;">يا ترى هل مازال نفس الكود؟</h3><br>
+    <input type="password" id="codeInput" placeholder="أدخلي الكود للحصول على الملف">
+    <p id="code" style="text-align: center;margin-bottom: 5px;border: 1px solid;color: rgb(199, 0, 0);text-shadow: 0 0 5px rgb(255, 118, 118);">هذا الكود خاطئ يا صفاء!</p>
+    <button onclick="checkCode()">فتح</button>
   </div>
 
   <div class="message-box" id="messageBox">
-    ما كنت اريدك اخباركِ به هو فقط,انكي شخص رائع ولا مثيل له, احب كثيرا التواصل معكي, 
-    ولدي الكثير من الفضول تجاهكي, كما اشعر احيانا انك تفهمينني اكثر مما افهم نفسي, 
-    اتمنى ان تبقي دائما بخير وسعادة ❤ فأنا لا احب ان اراكي حزينة او مستاءة واريد ان تكوني دائما 
-    في اعلى وارقى المراتب وتتفوقي على الجميع, شكرا لكي😔<br><br>
-    <strong>ارسلي 001 ان تمكنتي من الوصول الى هنا وانا سأعلم انكي قرئتي الرسالة وسأرد عليكي بلايك 👍🏻</strong>
+    <p>نظرا لأن المبرمج اسماعيل مشغول نوعا ما، اوربما ذلك الغبي نسي بعض الاكواد وهو في مأزق الآن، لم يستطع ربط الملف بالموقع حاليا، لكن على ما أظن فقد يتحدى عقله ويتذكر تلك الأكواد، اووه! هل مازال يجيد صناعة الخوارزميات ياترى؟! على ما اظن انه سيستطيع انهاء كل شيء يوم الأحد، لأن في ذلك اليوم يكون لديه وقت فراغ لا يملأه الا.. الا... اي شيء! قد يعطي اهتماما لخيط وإبرة في ذلك اليوم من شدة الفراغ، على ما اظن فالأنسب هو إكمال تطوير هذا الموقع.. كي يتجنب النقص والشعور بالإحراج أمام صفاء لأنه قدم شيئا ناقصا لم يكن في المستوى، اذن! بيت القصيد: هو أن أقصى تقدير كي يصبح الملف متوفرا هنا! هو التاسعة ليلا يوم الأحد.. ربما تكون هناك إضافات.. من يعلم؟! كل شيء سيتضح يوم الأحد..</p>
   </div>
 
   <script>
+    let welcome = document.getElementById('welcom-box')
+    nextStep = () => {
+      welcome.style.display = 'none';
+      document.getElementById('loginBox').style.display = 'block';
+        setTimeout(() => {
+    document.getElementById('loginBox').style.opacity='1';
+   }, 10);
+    }
     function checkCode() {
       const code = document.getElementById('codeInput').value;
       const loginBox = document.getElementById('loginBox');
@@ -108,10 +134,11 @@
         messageBox.style.display = "block";
         messageBox.style.width = "inherit";
       } else {
-        alert("الكود غير صحيح ⚠");
+        document.getElementById('code').style.display = "block";
       }
     }
-  </script>
+</script>
 </body>
 
 </html>
+
